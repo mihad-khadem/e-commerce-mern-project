@@ -1,26 +1,4 @@
-const express = require('express')
-const app = express();
-const port = process.env.PORT || 3001;
-const morgan = require('morgan');
-
-
-
-//! Middlewares
-
-app.use(morgan('dev'));
-
-
-
-//! Testing for API health 
-app.get('/test', (req, res) => {
-    res.status(200).send({ message: 'working fine'});
-})
-
-
-app.get('/',(req, res) => {
-    res.status(200).send({message : "Server running..."});
-})
-
-app.listen(port, ()=> {
-    console.log(`listening on ${port}`);
-})
+const app = require('./app.js')
+app.listen(3001, () => {
+  console.log(`listening on ${3000}`);
+});
